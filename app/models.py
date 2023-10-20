@@ -12,4 +12,3 @@ class Quiz(Base):
     question = Column(String, index=True)
     answer = Column(String, index=True)
     creation_date = Column(String, index=True)
-

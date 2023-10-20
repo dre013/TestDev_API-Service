@@ -75,4 +75,3 @@ async def delete_all(db: Session = Depends(get_db)):
     if db_quiz is False:
         raise HTTPException(status_code=404, detail="Database is empty")   
     return {"Database deletion status": f"{db_quiz}"}
-

@@ -1,6 +1,7 @@
 from pydantic import BaseModel, ValidationError
 from typing import Optional
 
+
 class Qiuz(BaseModel):
     id: int
     question: str
@@ -9,4 +10,3 @@ class Qiuz(BaseModel):
 
     class Config:
         orm_mode = True
-

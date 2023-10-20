@@ -10,7 +10,6 @@ def get_quiz_by_id(db: Session, quiz_id: int):
     return db.query(models.Quiz).filter(models.Quiz.id == quiz_id).first()
 
 
-
 def get_quizzes(db: Session):
     return db.query(models.Quiz).all()
 
@@ -28,7 +27,6 @@ def get_last_quiz(db: Session):
         return db.query(models.Quiz).all()[-2]
     except:
         return schemas.Qiuz(id = 0, question = "string", answer = "string", creation_date = "string")
-
 
 
 def put_quiz(db: Session, quiz_id: int, quiz: schemas.Qiuz):
@@ -59,6 +57,3 @@ def delete_all(db: Session):
         return db_quiz 
     else:
         return False
-
-
-
