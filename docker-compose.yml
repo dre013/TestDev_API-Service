@@ -1,0 +1,16 @@
+version: '3.1'
+
+services:
+  pg_data:
+    image: postgres
+    restart: always
+    environment:
+      - POSTGRES_DB=fastapi_DB
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=111
+    container_name: pg_data
+    ports:
+      - "5433:5432"
+    volumes:
+      - /volumes/pg_data:/var/lib/postgresql/data
+
