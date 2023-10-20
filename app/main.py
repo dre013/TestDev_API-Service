@@ -30,7 +30,8 @@ async def create_quiz(questions_num: int, db: Session = Depends(get_db)):
         quiz_response = quiz(id = question['id'], question = question['question'], answer = question['answer'], creation_date = question['created_at'])
         db_quiz = crud.create_quiz(db, quiz=quiz_response)
         if db_quiz:
-            next
+            while db_quiz is True:
+                create_quiz(questions_num=1, db=db)
         else:
             crud.create_quiz(db, quiz=quiz_response)
     return crud.get_last_quiz(db)
